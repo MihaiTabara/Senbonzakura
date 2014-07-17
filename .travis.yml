@@ -18,7 +18,6 @@ before_script:
 script:
     - pwd
     - sudo ls
-    - sudo cat /etc/my.cnf
     - who
     - groups
     - mysql -e 'set global innodb_file_format=Barracuda'
