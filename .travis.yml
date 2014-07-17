@@ -14,13 +14,15 @@ install:
     - python setup.py develop
 
 before_script:
-    - mysql -e 'set global innodb_file_format=Barracuda'
-    - mysql -e 'set global innodb_large_prefix=1'
-    - mysql.server restart
-    - mysql -e 'create database funsize_test;'
+    #- mysql -e 'set global innodb_file_format=Barracuda'
+    #- mysql -e 'set global innodb_large_prefix=1'
+    #- mysql.server restart
+    #- mysql -e 'create database funsize_test;'
 
 script:
     - pwd
+    - who
+    - groups
     - mysql --help
     - exit 1
     - nosetests -v
