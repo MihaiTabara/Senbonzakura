@@ -20,6 +20,7 @@ Under the `[mysqld]` section add:
 
 1. `innodb_file_format = Barracuda`
 2. `innodb_large_prefix = 1`
+3. `innodb_file_per_table=true`
 
 These are required to let InnoDB (the default MySQL storage engine) to store
 keys longer than 255 chars.

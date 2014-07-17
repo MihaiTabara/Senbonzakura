@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError # importing errors to make them availble too
 from sqlalchemy.orm import sessionmaker
 import logging
+import sys
 
 import pdb
 import pprint
