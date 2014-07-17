@@ -25,8 +25,9 @@ script:
       #- sudo wget people.mozilla.org/~asingh/my.cnf -O /home/travis/my.cnf
     - sudo service mysql restart
     - mysql -e 'create database funsize_test;'
+    - mysql -e 'show variables;'
     - mysql --help
-      #- exit 1
+    - exit 1
     - nosetests -v
     - bash tests/integration-test.sh -t
 
