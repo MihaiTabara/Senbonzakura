@@ -20,10 +20,9 @@ script:
     - sudo ls
     - who
     - groups
-    - sudo service mysql stop
-    - sudo rm /etc/mysql/my.cnf
-    - sudo wget people.mozilla.org/~asingh/my.cnf -O /home/travis/my.cnf
-    - sudo service mysql start
+    - sudo sed -i 's/\(\* InnoDB\)/\1\ninnodb_file_format = Barracuda\ninnodb_large_prefix = 1/' /etc/mysql/my.cnf
+      #- sudo wget people.mozilla.org/~asingh/my.cnf -O /home/travis/my.cnf
+    - sudo service mysql restart
     - mysql -e 'create database funsize_test;'
     - mysql --print-defaults
     - mysql --help
