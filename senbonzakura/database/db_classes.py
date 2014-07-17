@@ -41,6 +41,7 @@ class Partial(Base):
                         Defaults to -1.
     """
     __tablename__='partial'
+    __table_args__={'mysql_row_format':'DYNAMIC'}
 
     status_code = {'COMPLETED': 0,         # Where should this dict reallly go to make it easily importable
                     'ABORTED': 1,
@@ -48,11 +49,13 @@ class Partial(Base):
                     'INVALID': 3,
                     }
 
+
+
     # Define Columns
     id = Column(Integer, primary_key=True)
     start_timestamp = Column(BigInteger, default=-1, nullable=False)
     finish_timestamp = Column(BigInteger, default=-1)
-    identifier = Column(String(500), nullable=False, unique=True) # Any arbitrary number over 257(128+1+128)
+    identifier = Column(String(257), nullable=False, unique=True) # Any arbitrary number over 257(128+1+128)
     status = Column(Integer, nullable=False, default=-1) # is it okay to use enum like stuff?
 
 if __name__ == '__main__':

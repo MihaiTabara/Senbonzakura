@@ -10,6 +10,7 @@ import time
 __here__ = os.path.dirname(os.path.abspath(__file__))
 
 
+@unittest.skip('Skipping Database Tests because tests are not written for MySQL, but only SQLite')
 class TestDB(unittest.TestCase):
     """ Test class for Database Interface """
 

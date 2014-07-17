@@ -1,6 +1,6 @@
 ; Default config file used by Flask App
 [db]
-uri = sqlite:////perma/funsize.db
+uri = mysql://root@localhost
 
 [cache]
 uri = /perma/cache

@@ -13,6 +13,9 @@ install:
     #- pip install -r requirements.txt
     - python setup.py develop
 
+before_script:
+    - mysql -e 'create database funsize_test;'
+
 script:
     - nosetests -v
     - bash tests/integration-test.sh -t

@@ -21,6 +21,7 @@ setup(name=PACKAGE_NAME,
         'nose==1.3.3',
         'redo==1.0',
         'requests==2.2.1',
+        'MySQL-python==1.2.5',
         ],
       packages=[
         'senbonzakura',
