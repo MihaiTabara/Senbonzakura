@@ -22,11 +22,11 @@ before_script:
     - cat /etc/mysql/my.cnf
     - sudo service mysql restart
     - mysql -e 'create database funsize_test;'
-    - mysql -e 'show variables;'
     - mysql --help
       #- exit 1
 
 script:
+    - mysql -e 'show variables;'
     - nosetests -v
     - bash tests/integration-test.sh -t
 
