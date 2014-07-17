@@ -27,7 +27,7 @@ script:
     - mysql -e 'create database funsize_test;'
     - mysql -e 'show variables;'
     - mysql --help
-    - exit 1
+      #- exit 1
     - nosetests -v
     - bash tests/integration-test.sh -t
 
