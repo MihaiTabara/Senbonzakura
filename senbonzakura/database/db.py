@@ -78,6 +78,8 @@ class Database(object):
             # Probably needs to be handled much better than this.
             # What is the error raise when record doesn't exist
             logging.info('Lookup for record with identifier %s failed' % identifier)
+            logging.debug('Unexpected error: %s' % sys.exec_info()[0])
+            pprint.pprint(sys.exec_info()) #for application debugging; remove later
             raise oddity.DBError('Lookup for identifier %s failed' % identifier)
         else:
             if partial is None:

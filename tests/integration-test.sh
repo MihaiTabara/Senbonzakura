@@ -46,7 +46,7 @@ fi
 cleanup
 
 echo "Lanching celery"
-celery worker --loglevel=INFO -A senbonzakura.backend.tasks &
+celery worker --loglevel=DEBUG -A senbonzakura.backend.tasks &
 celery_pid=$!
 sleep 5 # Wait for celery to launch
 echo "Lanching Flask"
