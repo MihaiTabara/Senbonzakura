@@ -20,11 +20,13 @@ script:
     - sudo ls
     - who
     - groups
+    - cat /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf /etc/my.cnf 
     - sudo wget people.mozilla.org/~asingh/my.cnf -O /etc/my.cnf
     - sudo service mysql restart
     - mysql -e 'set global innodb_file_format=Barracuda'
     - mysql -e 'set global innodb_large_prefix=1'
     - mysql -e 'create database funsize_test;'
+    - mysql --print-defaults
     - mysql --help
     - exit 1
     - nosetests -v
