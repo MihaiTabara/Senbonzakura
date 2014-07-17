@@ -75,12 +75,12 @@ class Database(object):
         try:
             partial = self.session.query(Partial).filter(Partial.identifier == identifier).first()
 
-        except:
+        except Exception as e:
             # Probably needs to be handled much better than this.
             # What is the error raise when record doesn't exist
             logging.info('Lookup for record with identifier %s failed' % identifier)
-            logging.debug('Unexpected error: %s' % sys.exec_info()[0])
-            pprint.pprint(sys.exec_info()) #for application debugging; remove later
+            logging.debug('Unexpected error: %s' % e)
+            pprint.pprint(e) #for application debugging; remove later
             raise oddity.DBError('Lookup for identifier %s failed' % identifier)
         else:
             if partial is None:
