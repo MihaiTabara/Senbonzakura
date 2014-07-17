@@ -1,4 +1,5 @@
 set -e
+#TODO: Add OS insensitive mysql startup
 echo "Starting RabbitMQ"
 rabbitmq-server &
 echo AMQ pid: $!
