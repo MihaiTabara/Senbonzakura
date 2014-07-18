@@ -21,10 +21,7 @@ before_script:
     - sudo sed -i 's/\(wait_timeout\s\+= \).*/\1 1800/' /etc/mysql/my.cnf
     - cat /etc/mysql/my.cnf
     - sudo service mysql restart
-      #- mysql -e 'show variables;'
-      - mysql -e 'create database funsize_test;'
-      #- mysql --help
-      #- exit 1
+    - mysql -e 'create database funsize_test;'
 
 script:
     - nosetests -v
